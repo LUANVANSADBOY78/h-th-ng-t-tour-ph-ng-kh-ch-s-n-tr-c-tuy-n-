@@ -1,0 +1,52 @@
+/* Styles for Flight Search Results Page */
+
+.flight-search-results {
+  font-family: 'Godwit', 'Noto Sans', sans-serif;
+}
+
+.filter-group {
+  margin-bottom: 24px;
+}
+
+.filter-checkbox input[type="checkbox"] {
+  accent-color: #0194f3;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.flight-result-card {
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.flight-result-card:hover {
+  border-color: #0194f3;
+}
+
+.flight-result-card button {
+  transition: all 0.2s ease;
+}
+
+.flight-result-card button:hover {
+  background: #007ce8;
+}
+
+/* Modal Scrollbar */
+.ticket-modal-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.ticket-modal-content::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+  border-radius: 8px;
+}
+ 
+.ticket-modal-content::-webkit-scrollbar-thumb {
+  background: #cdd0d1; 
+  border-radius: 8px;
+}
+
+.ticket-modal-content::-webkit-scrollbar-thumb:hover {
+  background: #a8abad; 
+}

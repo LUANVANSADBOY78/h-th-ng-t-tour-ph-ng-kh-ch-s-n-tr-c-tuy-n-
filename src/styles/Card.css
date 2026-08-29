@@ -1,0 +1,124 @@
+.tvlk-activity-card {
+  background: white;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(3,18,26,0.08);
+  border: 1px solid var(--border);
+  transition: box-shadow 0.2s, transform 0.2s;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  min-width: 250px;
+  max-width: 250px;
+}
+
+.tvlk-activity-card:hover {
+  box-shadow: 0 4px 10px rgba(3,18,26,0.15);
+}
+
+.tvlk-card-image-wrap {
+  position: relative;
+  height: 140px;
+  overflow: hidden;
+}
+
+.tvlk-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tvlk-card-badges {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tvlk-badge {
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  color: white;
+}
+
+.tvlk-badge-instant {
+  background: rgba(16, 185, 129, 0.9);
+}
+
+.tvlk-badge-flexible {
+  background: rgba(245, 158, 11, 0.9);
+}
+
+.tvlk-card-body {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.tvlk-card-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #03121a;
+  line-height: 1.4;
+  margin-bottom: 4px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.tvlk-card-location {
+  color: #687176;
+  font-size: 12px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.tvlk-card-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+.tvlk-star {
+  color: #ff5e1f;
+  font-size: 14px;
+}
+
+.tvlk-rating-score {
+  font-weight: 700;
+  color: #03121a;
+  font-size: 12px;
+}
+
+.tvlk-reviews {
+  color: #687176;
+  font-size: 12px;
+}
+
+.tvlk-card-price-wrap {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.tvlk-price-old {
+  font-size: 12px;
+  color: #687176;
+  text-decoration: line-through;
+  margin-bottom: 2px;
+}
+
+.tvlk-price-current {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ff5e1f; /* Traveloka orange price */
+}

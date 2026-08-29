@@ -1,0 +1,217 @@
+/* ==============================================
+   NAVBAR — Pixel-perfect Traveloka clone
+   ============================================== */
+
+.tvlk-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+}
+
+/* ---- TOP BAR ---- */
+.tvlk-topbar {
+  background: white;
+  border-bottom: 1px solid #f0f1f2;
+  box-shadow: 0 2px 24px rgba(11,11,11,0.1);
+  position: relative;
+  z-index: 101;
+}
+
+.tvlk-topbar-inner {
+  max-width: 1222px;
+  margin: 0 auto;
+  padding: 16px 12px 8px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 64px;
+}
+
+.tvlk-logo {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+}
+
+.tvlk-topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+/* Top links */
+.tvlk-toplink {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Godwit', 'Noto Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  color: #242628;
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+  transition: background 0.15s;
+}
+
+.tvlk-toplink:hover {
+  background: #f7f9fa;
+}
+
+/* Dropdown */
+.tvlk-toplink-dropdown-wrapper {
+  position: relative;
+}
+
+.tvlk-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(3,18,26,0.2);
+  padding: 8px 0;
+  min-width: 220px;
+  z-index: 1000;
+  margin-top: 4px;
+}
+
+.more-dropdown {
+  left: 0;
+  right: auto;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 16px;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 600;
+  color: #03121a;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.dropdown-item span {
+  font-size: 18px;
+}
+
+.dropdown-item:hover {
+  background: #f7f9fa;
+  color: #0194f3;
+}
+
+/* Auth buttons */
+.tvlk-auth-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 8px;
+}
+
+.tvlk-username {
+  font-size: 14px;
+  font-weight: 600;
+  color: #242628;
+}
+
+.tvlk-btn-login {
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 2px solid #0194f3;
+  background: white;
+  color: #0194f3;
+  transition: all 0.15s;
+}
+
+.tvlk-btn-login:hover {
+  background: #f0f9ff;
+}
+
+.tvlk-btn-register {
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 2px solid #0194f3;
+  background: #0194f3;
+  color: white;
+  transition: all 0.15s;
+}
+
+.tvlk-btn-register:hover {
+  background: #007ce8;
+  border-color: #007ce8;
+}
+
+/* ---- SUB NAV ---- */
+.tvlk-subnav {
+  background: white;
+  border-bottom: 1px solid #f0f1f2;
+}
+
+.tvlk-subnav-inner {
+  max-width: 1222px;
+  margin: 0 auto;
+  padding: 0 12px;
+  display: flex;
+  align-items: stretch;
+  height: 48px;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.tvlk-subnav-inner::-webkit-scrollbar { display: none; }
+
+.tvlk-subnav-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 16px;
+  height: 100%;
+  font-family: 'Godwit', 'Noto Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #687176;
+  white-space: nowrap;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.tvlk-subnav-item:hover {
+  color: #0194f3;
+}
+
+.tvlk-subnav-item.active {
+  color: #0194f3;
+  border-bottom-color: #0194f3;
+}
+
+@media (max-width: 1024px) {
+  .tvlk-topbar-right .tvlk-toplink {
+    display: none;
+  }
+  .tvlk-topbar-right .tvlk-auth-group {
+    display: flex;
+  }
+}

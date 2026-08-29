@@ -1,0 +1,20 @@
+/* Styles for Retrieve Booking Page */
+.retrieve-booking-page {
+  font-family: 'Godwit', 'Noto Sans', sans-serif;
+}
+
+.rb-sidebar .sidebar-item {
+  transition: all 0.2s;
+}
+
+.rb-sidebar .sidebar-item:not(.active):hover {
+  background: #f0f1f2;
+}
+
+.rb-inputs-row input::placeholder {
+  color: #cdd0d1;
+}
+
+.rb-phone-row input::placeholder {
+  color: #cdd0d1;
+}

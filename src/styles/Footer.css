@@ -1,0 +1,204 @@
+/* =========================================
+   FOOTER STYLES
+   ========================================= */
+
+.tvlk-footer-container {
+  font-family: Godwit, NotoSans, -apple-system, sans-serif;
+  border-top: 1px solid #f0f1f2;
+}
+
+.tvlk-footer-container a { text-decoration: none; color: inherit; }
+.tvlk-footer-container a:hover { text-decoration: underline; }
+
+/* 1. SEO Links Section */
+.footer-seo-links {
+  background: white;
+  padding: 40px 0;
+}
+.seo-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #03121a;
+  margin-bottom: 24px;
+}
+.seo-links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+.seo-col h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #03121a;
+  margin-bottom: 12px;
+}
+.seo-col ul {
+  list-style: none;
+  padding: 0; margin: 0;
+}
+.seo-col li {
+  margin-bottom: 8px;
+}
+.seo-col a {
+  font-size: 14px;
+  color: #687176;
+  font-weight: 500;
+}
+.seo-col a:hover { color: #0194f3; }
+
+/* 2. Newsletter Section */
+.footer-newsletter {
+  background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1600&q=80');
+  background-size: cover;
+  background-position: center;
+  padding: 40px 0 0;
+  position: relative;
+  overflow: hidden;
+}
+.newsletter-inner {
+  display: flex;
+  align-items: flex-end;
+  gap: 40px;
+}
+.newsletter-phone-mockup img {
+  display: block;
+  max-height: 240px;
+  object-fit: contain;
+}
+.newsletter-content {
+  color: white;
+  padding-bottom: 40px;
+  flex: 1;
+  max-width: 600px;
+}
+.newsletter-content h3 {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 16px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+.newsletter-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.newsletter-form input {
+  flex: 1;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: none;
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+}
+.newsletter-form button {
+  background: #ff5e1f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0 24px;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: inherit;
+}
+.newsletter-form button:hover { background: #e04b12; }
+.newsletter-content p {
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+/* 3. Main Dark Footer */
+.footer-main-dark {
+  background: #1c2930;
+  color: #fff;
+  padding: 40px 0 0;
+}
+
+.footer-dark-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-logo {
+  font-size: 32px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.footer-trust h4,
+.footer-col-2 h4,
+.footer-col-3 h4,
+.footer-col-4 h4 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #fff;
+}
+
+.payment-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.pay-logo {
+  background: white;
+  color: #1c2930;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 6px 12px;
+  border-radius: 4px;
+}
+
+.footer-col-2 ul, .footer-col-3 ul {
+  list-style: none;
+  padding: 0; margin: 0;
+}
+.footer-col-2 li, .footer-col-3 li {
+  margin-bottom: 12px;
+}
+.footer-col-2 a, .footer-col-3 a {
+  color: #cdd0d1;
+  font-size: 14px;
+  font-weight: 500;
+}
+.footer-col-2 a:hover, .footer-col-3 a:hover { color: white; }
+
+.app-stores {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.app-stores img {
+  height: 40px;
+  cursor: pointer;
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #cdd0d1;
+  font-size: 14px;
+  font-weight: 500;
+}
+.social-links span { cursor: pointer; }
+.social-links span:hover { color: white; }
+
+.footer-bottom-copyright {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding: 24px 0;
+  text-align: center;
+  color: #96a0a5;
+  font-size: 12px;
+}
+.footer-bottom-copyright p { margin-bottom: 4px; }
+
+@media (max-width: 768px) {
+  .newsletter-inner { flex-direction: column; align-items: center; }
+  .newsletter-phone-mockup { display: none; }
+  .footer-dark-grid { grid-template-columns: 1fr; gap: 32px; }
+}
