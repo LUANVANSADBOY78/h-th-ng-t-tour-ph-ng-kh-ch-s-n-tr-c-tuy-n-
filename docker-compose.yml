@@ -1,0 +1,72 @@
+version: '3.8'
+
+services:
+  # 1. FRONTEND SERVICE (React / Vite)
+  frontend:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: traveloka_frontend
+    ports:
+      - "3000:80" # Map port 3000 của máy host vào port 80 của Nginx
+    depends_on:
+      - backend
+    networks:
+      - travel_network
+    restart: unless-stopped
+
+  # 2. BACKEND SERVICE (NodeJS / Express / SpringBoot - Ví dụ)
+  backend:
+    image: node:22-alpine # Thay bằng build context nếu bạn đã có code backend
+    # build: ./backend
+    container_name: traveloka_backend
+    working_dir: /app
+    # command: npm run start
+    # volumes:
+    #   - ./backend:/app
+    ports:
+      - "8080:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      - PORT=8080
+      - DB_HOST=db
+      - DB_USER=root
+      - DB_PASS=rootpassword
+      - DB_NAME=traveloka_db
+    networks:
+      - travel_network
+    restart: unless-stopped
+    # Tạm thời để container backend không bị exit khi chưa có code thật
+    command: tail -f /dev/null 
+
+  # 3. DATABASE SERVICE (MySQL)
+  db:
+    image: mysql:8.0
+    container_name: traveloka_db
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: traveloka_db
+      MYSQL_USER: travel_user
+      MYSQL_PASSWORD: travel_password
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - travel_network
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
+    restart: unless-stopped
+
+# Định nghĩa Volumes để lưu trữ dữ liệu DB không bị mất khi tắt container
+volumes:
+  db_data:
+
+# Định nghĩa Network riêng để các service gọi nhau (vd: backend gọi db bằng tên 'db')
+networks:
+  travel_network:
+    driver: bridge
