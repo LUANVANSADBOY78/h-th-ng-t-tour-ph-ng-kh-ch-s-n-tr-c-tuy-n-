@@ -31,10 +31,7 @@ services:
       - db
     environment:
       - PORT=8080
-      - DB_HOST=db
-      - DB_USER=root
-      - DB_PASS=rootpassword
-      - DB_NAME=traveloka_db
+      - MONGODB_URI=mongodb://db:27017/traveloka_db
     networks:
       - travel_network
     restart: unless-stopped
@@ -45,10 +42,7 @@ services:
     container_name: traveloka_mongo
     ports:
       - "27017:27017"
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: rootpassword
-      MONGO_INITDB_DATABASE: traveloka_db
+    command: mongod --noauth
     volumes:
       - mongo_data:/data/db
     networks:
