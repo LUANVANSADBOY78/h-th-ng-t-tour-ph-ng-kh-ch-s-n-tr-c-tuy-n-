@@ -15,15 +15,16 @@ services:
       - travel_network
     restart: unless-stopped
 
-  # 2. BACKEND SERVICE (NodeJS / Express / SpringBoot - Ví dụ)
+  # 2. BACKEND SERVICE (NodeJS / Express)
   backend:
-    image: node:22-alpine # Thay bằng build context nếu bạn đã có code backend
-    # build: ./backend
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
     container_name: traveloka_backend
     working_dir: /app
-    # command: npm run start
-    # volumes:
-    #   - ./backend:/app
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
     ports:
       - "8080:8080"
     depends_on:
@@ -38,8 +39,6 @@ services:
     networks:
       - travel_network
     restart: unless-stopped
-    # Tạm thời để container backend không bị exit khi chưa có code thật
-    command: tail -f /dev/null 
 
   # 3. DATABASE SERVICE (MySQL)
   db:
