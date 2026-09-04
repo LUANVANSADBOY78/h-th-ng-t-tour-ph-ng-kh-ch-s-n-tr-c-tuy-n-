@@ -2,7 +2,7 @@ services:
   - type: web
     name: travel-booking-platform
     env: static
-    buildCommand: npm install && npx vite build
+    buildCommand: npm ci && npm run build
     staticPublishPath: ./dist
     envVars:
       - key: VITE_BASE_PATH

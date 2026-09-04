@@ -15,6 +15,7 @@ import BusSearchResultsPage from './pages/BusSearchResultsPage';
 import BusBookingPage from './pages/BusBookingPage';
 import PaymentPage from './pages/PaymentPage';
 import MyBookingsPage from './pages/MyBookingsPage';
+import AdminDashboard from './pages/AdminDashboard';
 import AuthModal from './components/AuthModal';
 import Footer from './components/Footer';
 
@@ -34,6 +35,7 @@ const ROUTE_MAP = {
   'bus-booking': 'bus-booking',
   'payment': 'payment',
   'my-bookings': 'my-bookings',
+  'admin': 'admin',
 };
 
 function getPageFromHash() {
@@ -83,10 +85,11 @@ function App() {
   const handleLogout = () => setUser(null);
 
   const isCheckoutPage = ['flight-booking', 'bus-booking', 'payment'].includes(currentPage);
+  const isAdminPage = currentPage === 'admin';
 
   return (
     <div className="app">
-      {!isCheckoutPage && (
+      {!isCheckoutPage && !isAdminPage && (
         <Navbar
           user={user}
           onOpenAuth={openAuth}
@@ -111,12 +114,13 @@ function App() {
         {currentPage === 'bus-booking'      && <BusBookingPage />}
         {currentPage === 'payment'          && <PaymentPage />}
         {currentPage === 'my-bookings'      && <MyBookingsPage />}
+        {currentPage === 'admin'            && <AdminDashboard onExit={() => navigateTo('xperience')} />}
         {currentPage === 'activity-detail'  && selectedActivity && (
           <ActivityDetail activity={selectedActivity} onBack={handleBackToHome} />
         )}
       </main>
 
-      {!isCheckoutPage && <Footer />}
+      {!isCheckoutPage && !isAdminPage && <Footer />}
 
       <AuthModal
         isOpen={isAuthOpen}
