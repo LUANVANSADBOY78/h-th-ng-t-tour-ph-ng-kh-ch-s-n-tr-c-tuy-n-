@@ -4,6 +4,21 @@ services:
     env: static
     buildCommand: npm ci && npm run build
     staticPublishPath: ./dist
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
     envVars:
       - key: VITE_BASE_PATH
         value: /
+
+  - type: web
+    name: travel-booking-platform-api
+    env: node
+    rootDir: backend
+    buildCommand: npm ci
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: MONGODB_URI
+        sync: false
