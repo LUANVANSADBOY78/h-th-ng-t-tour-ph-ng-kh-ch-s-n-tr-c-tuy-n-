@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: travel-booking-platform
+    name: travelnow-frontend-v2
     env: static
     autoDeploy: true
     buildCommand: npm ci && npm run build
@@ -14,7 +14,7 @@ services:
         value: /
 
   - type: web
-    name: travel-booking-platform-api
+    name: travelnow-api-v2
     env: node
     autoDeploy: true
     rootDir: backend
