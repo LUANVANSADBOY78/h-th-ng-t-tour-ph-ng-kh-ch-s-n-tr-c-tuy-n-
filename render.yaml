@@ -2,6 +2,7 @@ services:
   - type: web
     name: travel-booking-platform
     env: static
+    autoDeploy: true
     buildCommand: npm ci && npm run build
     staticPublishPath: ./dist
     routes:
@@ -15,6 +16,7 @@ services:
   - type: web
     name: travel-booking-platform-api
     env: node
+    autoDeploy: true
     rootDir: backend
     buildCommand: npm ci
     startCommand: npm start
